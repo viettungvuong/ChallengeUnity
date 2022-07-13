@@ -23,10 +23,7 @@ public class Game : MonoBehaviour
     {
         Game.score++;
     }
-    private bool isObjectHere(Vector3 position)
-    {
-        return Physics.CheckSphere(position, 0.01f);
-    }
+
     void spawnEnemies()
     {
         for (int i = 0; i < spawn; i++)
@@ -38,7 +35,6 @@ public class Game : MonoBehaviour
             Debug.Log(vt3);
             int c = Random.Range(0, enemies.Count);
             GameObject enemy = Instantiate(enemies[c], vt3, Quaternion.identity);
-            enemy.transform.localScale = 0.5f * enemy.transform.localScale;
         }
     }
 }
