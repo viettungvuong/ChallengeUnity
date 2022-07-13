@@ -1,0 +1,20 @@
+
+// For build scene ui
+
+1:  https://assetstore.unity.com/packages/3d/environments/industrial/rpg-fps-game-assets-for-pc-mobile-industrial-set-v1-0-87024#description
+
+
+// for enemy
+2:  https://assetstore.unity.com/packages/3d/characters/creatures/rpg-monster-duo-pbr-polyart-157762#description
+
+
+// for fps - use [FPSController] shott enemy
+3:  https://assetstore.unity.com/packages/essentials/asset-packs/standard-assets-for-unity-2018-4-32351#content
+
+
+
+Yêu cầu:
+
+1. Sử dụng asset pack 1 để tạo một bản đồ game fps
+2. Sử dụng asset pack 2 để tạo các enemy trong map, có thể đứng im tại chỗ hoặc di chuyển ngẫu nhiên [tùy khả năng]
+3. Asset pack 3, dùng FPSController để di chuyển nhân vật trong map shot các enemy ở pack2, trúng thì + diểm trên giao diện màn hình. Sử dụng khẩu súng piston.fbx gắng vào [FPSController].
