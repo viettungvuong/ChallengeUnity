@@ -6,6 +6,7 @@ public class Shoot : MonoBehaviour
 {
     public float range;
     public Camera cam;
+    public ParticleSystem shootEffect;
     void Start()
     {
 
@@ -20,6 +21,7 @@ public class Shoot : MonoBehaviour
 
     void shootGun()
     {
+        shootEffect.Play();
         RaycastHit shootHit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out shootHit, range))
         {
