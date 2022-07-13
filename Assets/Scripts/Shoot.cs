@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    public GameObject gun, bullet;
-    public float speed;
+    public float range;
+    public Camera cam;
     void Start()
     {
 
@@ -14,13 +14,22 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetButtonDown("Fire1"))
+            shootGun();
     }
 
     void shootGun()
     {
-        GameObject shootBullet = Instantiate(bullet, bullet.transform.position, bullet.transform.rotation);
-        shootBullet.transform.parent = gun.transform; //dat dan vao sung
-        shootBullet.GetComponent<Rigidbody>().velocity = speed * transform.forward;
+        RaycastHit shootHit;
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out shootHit, range))
+        {
+            if (shootHit.transform.CompareTag("enemy"))
+                incrementScore();
+        }
+    }
+
+    void incrementScore()
+    {
+        Game.score++;
     }
 }
