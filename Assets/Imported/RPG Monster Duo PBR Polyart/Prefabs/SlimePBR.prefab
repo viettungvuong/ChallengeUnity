@@ -394,6 +394,7 @@ GameObject:
   - component: {fileID: 4023215848608658}
   - component: {fileID: 95161444847813696}
   - component: {fileID: 6912718847985466760}
+  - component: {fileID: -6369169836699386770}
   m_Layer: 0
   m_Name: SlimePBR
   m_TagString: enemy
@@ -451,6 +452,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9800748, y: 0.8765136, z: 1}
   m_Center: {x: -0.009962589, y: 0.42888147, z: 0}
+--- !u!114 &-6369169836699386770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919012471076396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576d874dca57742b790273cb15a99e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
 --- !u!1 &1989916952965676
 GameObject:
   m_ObjectHideFlags: 0
