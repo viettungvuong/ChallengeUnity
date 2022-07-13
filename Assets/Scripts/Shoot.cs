@@ -24,6 +24,7 @@ public class Shoot : MonoBehaviour
         Vector3 rotation = new Vector3(0, -90, -90);
         Quaternion rotationQ = Quaternion.Euler(rotation);
         GameObject newBullet = Instantiate(bullet, spawnBullet.position, rotationQ);
+        newBullet.transform.localScale = 0.1f * newBullet.transform.localScale;
         Physics.IgnoreCollision(newBullet.GetComponent<Collider>(),
             spawnBullet.parent.GetComponent<Collider>()); //kh quan tam va cham giua 2 thang nay de tranh dan kh bay ra duoc
         newBullet.transform.position = spawnBullet.position;

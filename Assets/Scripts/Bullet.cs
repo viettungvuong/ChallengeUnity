@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+
+
+    private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(other.transform.name);
-        if (other.gameObject.CompareTag("enemy"))
+        Debug.Log(collision.transform.name);
+        if (collision.gameObject.CompareTag("enemy"))
         {
             Game.incrementScore();
-            Destroy(other);
+            Destroy(collision.gameObject);
         }
     }
 }
