@@ -25,15 +25,29 @@ public class Game : MonoBehaviour
         Game.score++;
     }
 
+    private bool overlap(Vector3 vt3)
+    {
+        Collider[] colliders = Physics.OverlapSphere(vt3, 2f);
+        foreach (Collider collider in colliders)
+        {
+            if (collider.gameObject.name != "Terrain")
+                return true;
+        }
+        return false;
+    }
+
     void spawnEnemies()
     {
         for (int i = 0; i < spawn; i++)
         {
             Vector3 vt3;
-            float x = Random.Range(xLow, xHigh);
-            float z = Random.Range(zLow, zHigh);
-            vt3 = new Vector3(x, ySpawn, z);
-            Debug.Log(vt3);
+            do
+            {
+                float x = Random.Range(xLow, xHigh);
+                float z = Random.Range(zLow, zHigh);
+                vt3 = new Vector3(x, ySpawn, z);
+                Debug.Log(vt3);
+            } while (overlap(vt3));
             int c = Random.Range(0, enemies.Count);
             GameObject enemy = Instantiate(enemies[c], vt3, Quaternion.identity);
         }
