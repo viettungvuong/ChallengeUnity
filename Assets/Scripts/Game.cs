@@ -9,6 +9,7 @@ public class Game : MonoBehaviour
     const float xLow = 3.6f, xHigh = 96.8f;
     const float zLow = 8.3f, zHigh = 97.16f;
     public static int score = 0;
+    public static int enemiesCount = spawn;
     public TMPro.TextMeshProUGUI scoreText;
     public List<GameObject> enemies;
     private void Start()
@@ -17,6 +18,8 @@ public class Game : MonoBehaviour
     }
     private void Update()
     {
+        if (enemiesCount <= 1) //neu so enemy be hon 1 thi ta lai them enemy
+            spawnEnemies();
         scoreText.text = Game.score.ToString();
     }
     public static void incrementScore()
