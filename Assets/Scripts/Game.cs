@@ -11,6 +11,10 @@ public class Game : MonoBehaviour
     public static int score = 0;
     public TMPro.TextMeshProUGUI scoreText;
     public List<GameObject> enemies;
+    private void Start()
+    {
+        spawnEnemies();
+    }
     private void Update()
     {
         scoreText.text = Game.score.ToString();
@@ -19,13 +23,22 @@ public class Game : MonoBehaviour
     {
         Game.score++;
     }
+    private bool isObjectHere(Vector3 position)
+    {
+        return Physics.CheckSphere(position, 0.01f);
+    }
     void spawnEnemies()
     {
-        GameObject[] temp = GameObject.FindGameObjectsWithTag("enemy");
-        enemies = new List<GameObject>(temp);
         for (int i = 0; i < spawn; i++)
         {
-
+            Vector3 vt3;
+            float x = Random.Range(xLow, xHigh);
+            float z = Random.Range(zLow, zHigh);
+            vt3 = new Vector3(x, ySpawn, z);
+            Debug.Log(vt3);
+            int c = Random.Range(0, enemies.Count);
+            GameObject enemy = Instantiate(enemies[c], vt3, Quaternion.identity);
+            enemy.transform.localScale = 0.5f * enemy.transform.localScale;
         }
     }
 }

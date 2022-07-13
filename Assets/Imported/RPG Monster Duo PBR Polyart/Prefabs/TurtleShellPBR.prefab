@@ -802,6 +802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4906828391645816}
   - component: {fileID: 95237074988894122}
+  - component: {fileID: 2897896513313180181}
   m_Layer: 0
   m_Name: TurtleShellPBR
   m_TagString: enemy
@@ -846,6 +847,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &2897896513313180181
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774625739149480}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4513592, y: 1.1739072, z: 1.2099468}
+  m_Center: {x: 0.03365332, y: 0.55577046, z: -0.09352368}
 --- !u!1 &1822049695589022
 GameObject:
   m_ObjectHideFlags: 0
