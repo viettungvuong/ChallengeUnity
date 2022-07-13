@@ -18,8 +18,6 @@ public class Game : MonoBehaviour
     }
     private void Update()
     {
-        if (enemiesCount <= 1) //neu so enemy be hon 1 thi ta lai them enemy
-            spawnEnemies();
         scoreText.text = Game.score.ToString();
     }
     public static void incrementScore()
