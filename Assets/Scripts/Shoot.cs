@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    public float range;
-    public Camera cam;
-    public ParticleSystem shootEffect;
+    public GameObject bullet;
+    public Transform spawnBullet;
+    public float speed;
     void Start()
     {
 
@@ -21,17 +21,15 @@ public class Shoot : MonoBehaviour
 
     void shootGun()
     {
-        shootEffect.Play();
-        RaycastHit shootHit;
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out shootHit, range))
-        {
-            if (shootHit.transform.CompareTag("enemy"))
-                incrementScore();
-        }
+        Vector3 rotation = new Vector3(0, -90, -90);
+        Quaternion rotationQ = Quaternion.Euler(rotation);
+        GameObject newBullet = Instantiate(bullet, spawnBullet.position, rotationQ);
+        Physics.IgnoreCollision(newBullet.GetComponent<Collider>(),
+            spawnBullet.parent.GetComponent<Collider>()); //kh quan tam va cham giua 2 thang nay de tranh dan kh bay ra duoc
+        newBullet.transform.position = spawnBullet.position;
+
+        newBullet.GetComponent<Rigidbody>().AddForce(spawnBullet.forward * speed, ForceMode.Impulse);
     }
 
-    void incrementScore()
-    {
-        Game.score++;
-    }
+
 }
