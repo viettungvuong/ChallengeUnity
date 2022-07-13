@@ -18,6 +18,6 @@ public class Bullet : MonoBehaviour
             Game.incrementScore();
             Destroy(collision.gameObject);
         }
-        StartCoroutine(destroyBullet(3)); //xoa bullet sau khi dung vat 3s
+        StartCoroutine(destroyBullet(10)); //xoa bullet sau khi dung vat 3s
     }
 }
