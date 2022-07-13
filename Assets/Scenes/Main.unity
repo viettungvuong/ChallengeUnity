@@ -4443,4 +4443,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 6108318130947594294, guid: 9e5107489820349da9d79a1cfc9b86a2, type: 3}
   spawnBullet: {fileID: 5945750304416212294}
-  speed: 20
+  speed: 13

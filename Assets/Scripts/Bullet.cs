@@ -5,7 +5,11 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
-
+    IEnumerator destroyBullet(int secs)
+    {
+        yield return new WaitForSeconds(secs);
+        gameObject.SetActive(false);
+    }
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.transform.name);
@@ -14,5 +18,6 @@ public class Bullet : MonoBehaviour
             Game.incrementScore();
             Destroy(collision.gameObject);
         }
+        StartCoroutine(destroyBullet(3)); //xoa bullet sau khi dung vat 3s
     }
 }
